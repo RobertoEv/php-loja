@@ -13,6 +13,11 @@
             </tr>
 
             <tr>
+                <td>Descrição</td>
+                <td><textarea class="form-control" name="descricao"></textarea></td>
+            </tr>
+
+            <tr>
                 <td><input class="btn-primary" type="submit" value="Cadastrar" /></td>
             </tr>
 

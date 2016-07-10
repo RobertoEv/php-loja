@@ -5,8 +5,8 @@
  * Date: 05/07/2016
  * Time: 19:43
  */
-function insereProduto($conexao, $nome, $preco) {
-    $query = "insert into produtos (nome, preco) values ('{$nome}', {$preco})";
+function insereProduto($conexao, $nome, $preco, $descricao) {
+    $query = "insert into produtos (nome, preco, descricao) values ('{$nome}', {$preco}, '{$descricao}')";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
     return $resultadoDaInsercao;
 }
