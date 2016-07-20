@@ -5,9 +5,9 @@ include("banco-produto.php");?>
     <?php
 
 
-        $nome = $_GET["nome"];
-        $preco = $_GET["preco"];
-        $descricao = $_GET["descricao"];
+        $nome = $_POST['nome'];
+        $preco = $_POST['preco'];
+        $descricao = $_POST['descricao'];
 
     if(insereProduto($conexao, $nome, $preco, $descricao)) {
         ?>
