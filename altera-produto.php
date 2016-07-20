@@ -1,10 +1,16 @@
-<?php include("cabecalho.php");
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Roberto
+ * Date: 20/07/2016
+ * Time: 17:54
+ */
+
+include("cabecalho.php");
 include("conecta.php");
-include("banco-produto.php");?>
+include("banco-produto.php");
 
-    <?php
-
-
+        $id = $_POST['id'];
         $nome = $_POST['nome'];
         $preco = $_POST['preco'];
         $descricao = $_POST['descricao'];
@@ -15,14 +21,14 @@ include("banco-produto.php");?>
             $usado = "false";
         }
 
-    if(insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado)) {
+    if(alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)) {
         ?>
-        <p class="alert-success">Produto <?=$nome;?>, <?=$preco;?> adicionado com sucesso!</p>
+        <p class="alert-success">Produto <?=$nome;?>, <?=$preco;?> alterado com sucesso!</p>
         <?php
     } else {
         $msg = mysqli_error($conexao);
         ?>
-        <p class="alert-danger">O produto <?= $nome; ?> não foi adicionado <?=$msg?></p>
+        <p class="alert-danger">O produto <?= $nome; ?> não foi alterado. <?=$msg?></p>
         <?php
     }
     ?>
