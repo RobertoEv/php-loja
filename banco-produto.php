@@ -5,6 +5,8 @@
  * Date: 05/07/2016
  * Time: 19:43
  */
+require_once("conecta.php");
+
 function insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado) {
     $query = "insert into produtos (nome, preco, descricao, categoria_id, usado) values ('{$nome}', {$preco}, '{$descricao}', {$categoria_id}, {$usado})";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
